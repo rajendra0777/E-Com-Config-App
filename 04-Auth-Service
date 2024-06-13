@@ -1,26 +1,31 @@
 spring:
- boot:
+  boot:
     admin:
       client:
-        url: http://localhost:111/
- datasource:
-    url: mysql://localhost:3306/ashokit_ecomm
+        url: http://localhost:1111/
+  datasource:
     username: root
     password: MYSQL
+    url: jdbc:mysql://localhost:3306/ashokit_ecomm
 
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    
 management:
   endpoints:
     web:
       exposure:
         include: '*'
 
-
-  jpa:
-    hibernate:
-      ddl-auto: update
-      
-    show-sql: true
-
 server:
-  port: 8081  
+ port: 8081
 
+# Application messages goes here
+auth-service:
+ messages: 
+  userReg: User Created
+  userRegErr: User Creation Failed
+  login: Login Success
+  loginErr: Invalid Credentials  
