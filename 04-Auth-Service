@@ -1,8 +1,18 @@
 spring:
+ boot:
+    admin:
+      client:
+        url: http://localhost:111/
  datasource:
     url: mysql://localhost:3306/ashokit_ecomm
     username: root
     password: MYSQL
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
 
 
   jpa:
@@ -13,3 +23,4 @@ spring:
 
 server:
   port: 8081  
+
